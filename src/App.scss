@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Work+Sans:400,500,700&display=swap');
+
+$font-title: 'Work Sans', sans-serif;
+$font: 'Montserrat', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font;
+  background-color: #130f40;
+}
+
+header {
+  padding: 50px 15px 0px;
+
+  h1 {
+    color: ghostwhite;
+    font-size: 48px;
+    font-weight: 500;
+    font-family: $font-title;
+    text-align: center;
+  }
+}
