@@ -2,7 +2,7 @@ import React from 'react'
 
 import './search.scss'
 
-function Search() {
+function Search({ handleInput, search }) {
   return (
     <div>
       <section className='search-box-wrapper'>
@@ -10,6 +10,8 @@ function Search() {
           type='text'
           placeholder='Search for a movie...'
           className='search-box'
+          onChange={handleInput}
+          onKeyPress={search}
         />
       </section>
     </div>
