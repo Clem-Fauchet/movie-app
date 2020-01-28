@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import './App.scss'
 import Search from './components/Search'
 import Results from './components/Results'
-import Result from './components/Result'
+import PopUp from './components/PopUp'
 
 function App() {
   const [state, setState] = useState({
@@ -34,6 +34,26 @@ function App() {
     })
   }
 
+  const openPopup = (id) => {
+    fetch(`${apiUrl}&i=${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        let results = data
+
+        setState((prevState) => {
+          return { ...prevState, selected: results }
+        })
+
+        console.log(results)
+      })
+  }
+
+  const closePopup = () => {
+    setState((prevState) => {
+      return { ...prevState, selected: {} }
+    })
+  }
+
   return (
     <div className='App'>
       <header>
@@ -41,7 +61,13 @@ function App() {
       </header>
       <main>
         <Search handleInput={handleInput} search={search} />
-        <Results results={state.results} />
+        <Results results={state.results} openPopup={openPopup} />
+
+        {typeof state.selected.Title != 'undefined' ? (
+          <PopUp selected={state.selected} closePopup={closePopup} />
+        ) : (
+          false
+        )}
       </main>
     </div>
   )
