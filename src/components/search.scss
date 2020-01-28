@@ -3,7 +3,7 @@
 
 main {
   width: 100%;
-  max-width: 960px;
+  max-width: 1010px;
   margin: 0 auto;
   font-family: $font;
 
@@ -25,6 +25,101 @@ main {
 
       &:focus {
         box-shadow: 0px 0px 8px 3px#2b2e5f;
+      }
+    }
+  }
+  .results {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px -15px;
+    .result {
+      width: 33.33%;
+      min-width: 250px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      img {
+        display: block;
+        width: 100%;
+      }
+      h3 {
+        color: ghostwhite;
+        font-size: 20px;
+        font-weight: 600;
+        padding: 10px;
+        background: #222343;
+        flex: 1 1 100%;
+        transition: 0.4s ease-out;
+      }
+      &:hover {
+        background: #2b2e5f;
+        transition: 0.4s ease-out;
+
+        h3 {
+          background: ghostwhite;
+          color: #222343;
+        }
+      }
+    }
+  }
+
+  .pop-up {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #445565;
+    overflow-y: scroll;
+    .content {
+      display: block;
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 25px;
+      color: ghostwhite;
+
+      h2 {
+        font-size: 28px;
+        font-weight: 600;
+        span {
+          font-weight: 300;
+          font-size: 20px;
+        }
+      }
+      .rating {
+        margin-bottom: 30px;
+      }
+      .plot {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0px -15px 30px;
+        img {
+          flex: 1 1 50%;
+          max-width: 300px;
+          padding: 0px 15px;
+        }
+        p {
+          flex: 1 1 50%;
+          padding: 15px;
+        }
+      }
+    }
+    .close {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: 700;
+      background: #30336b;
+      color: ghostwhite;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: 0.4s ease-out;
+      &:hover {
+        background: #130f40;
       }
     }
   }
