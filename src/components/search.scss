@@ -70,7 +70,7 @@ main {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #445565;
+    background-color: #130f40;
     overflow-y: scroll;
     .content {
       display: block;
@@ -111,7 +111,7 @@ main {
       padding: 15px 30px;
       font-size: 18px;
       font-weight: 700;
-      background: #30336b;
+      background: #2b2e5f;
       color: ghostwhite;
       border-radius: 8px;
       border: none;
@@ -119,7 +119,7 @@ main {
       cursor: pointer;
       transition: 0.4s ease-out;
       &:hover {
-        background: #130f40;
+        background: #222343;
       }
     }
   }

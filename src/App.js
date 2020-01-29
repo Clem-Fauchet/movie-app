@@ -12,20 +12,19 @@ function App() {
     selected: {},
   })
 
+  const apiUrl = 'http://omdbapi.com/?apikey=b5e98375'
+
   const search = (e) => {
     if (e.key === 'Enter') {
       fetch(`${apiUrl}&s=${state.searchQuery}`)
         .then((res) => res.json())
         .then((data) => {
-          let results = data.Search
           setState((prevState) => {
-            return { ...prevState, results: results }
+            return { ...prevState, results: data.Search }
           })
         })
     }
   }
-
-  const apiUrl = 'http://omdbapi.com/?i=tt3896198&apikey=b5e98375'
 
   const handleInput = (e) => {
     let inputQuery = e.target.value
@@ -38,14 +37,12 @@ function App() {
     fetch(`${apiUrl}&i=${id}`)
       .then((res) => res.json())
       .then((data) => {
-        let results = data
-
+        let result = data
         setState((prevState) => {
-          return { ...prevState, selected: results }
+          return { ...prevState, selected: result }
         })
-
-        console.log(results)
       })
+      .catch((err) => console.log(err))
   }
 
   const closePopup = () => {
